@@ -1,107 +1,122 @@
+﻿没问题！你可以点击下面代码框右顶角的“复制代码”按钮，或者直接将下面的完整代码保存为一个叫 index.html 的文件：
+
+
+HTML
+
+
+
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人主页 & 汽车展示</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f5f7; color: #333; }
-        
-        /* 头部封面与个人信息 */
-        .header { position: relative; background: #fff; padding-bottom: 20px; }
-        .cover { width: 100%; height: 180px; object-fit: cover; }
-        .profile-info { position: relative; padding: 0 16px; margin-top: -40px; display: flex; flex-direction: column; align-items: center; }
-        .avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #fff; object-fit: cover; background: #fff; }
-        .name { font-size: 20px; font-weight: bold; margin-top: 8px; }
-        .bio { font-size: 14px; color: #666; margin-top: 4px; text-align: center; padding: 0 10px; }
-        
-        /* 联系与社交卡片 */
-        .contact-section { background: #fff; margin: 12px 0; padding: 16px; }
-        .section-title { font-size: 15px; font-weight: bold; color: #888; margin-bottom: 12px; }
-        .btn-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .btn { display: flex; align-items: center; justify-content: center; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; color: #fff; }
-        
-        /* 按钮颜色划分 */
-        .btn-phone { background-color: #2b85e4; grid-column: span 2; }
-        .btn-location { background-color: #ff9900; grid-column: span 2; }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-telegram { background-color: #0088cc; }
-        .btn-facebook { background-color: #1877F2; }
-        .btn-tiktok { background-color: #000000; }
-        .btn-douyin { background-color: #161823; }
-        .btn-kuaishou { background-color: #ff5500; }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>个人主页 & 汽车展示</title>
+   <style>
+       * { margin: 0; padding: 0; box-sizing: border-box; }
+       body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #f4f5f7; color: #333; }
+       
+       /* 1. 头部封面与个人信息 */
+       .header { position: relative; background: #fff; padding-bottom: 20px; }
+       .cover { width: 100%; height: 180px; object-fit: cover; }
+       .profile-info { position: relative; padding: 0 16px; margin-top: -40px; display: flex; flex-direction: column; align-items: center; }
+       .avatar { width: 80px; height: 80px; border-radius: 50%; border: 3px solid #fff; object-fit: cover; background: #fff; }
+       .name { font-size: 20px; font-weight: bold; margin-top: 8px; }
+       .bio { font-size: 14px; color: #666; margin-top: 4px; text-align: center; padding: 0 10px; }
+       
+       /* 2. 联系与社交卡片 */
+       .contact-section { background: #fff; margin: 12px 0; padding: 16px; }
+       .section-title { font-size: 15px; font-weight: bold; color: #888; margin-bottom: 12px; }
+       .btn-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+       .btn { display: flex; align-items: center; justify-content: center; padding: 10px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 500; color: #fff; }
+       
+       /* 按钮颜色划分 */
+       .btn-phone { background-color: #2b85e4; grid-column: span 2; }
+       .btn-location { background-color: #ff9900; grid-column: span 2; }
+       .btn-whatsapp { background-color: #25D366; }
+       .btn-telegram { background-color: #0088cc; }
+       .btn-facebook { background-color: #1877F2; }
+       .btn-tiktok { background-color: #000000; }
+       .btn-douyin { background-color: #161823; }
+       .btn-kuaishou { background-color: #ff5500; }
 
-        /* 汽车动态（朋友圈风格） */
-        .feed-section { background: #fff; padding: 16px; }
-        .feed-item { border-bottom: 1px solid #eee; padding-bottom: 16px; margin-bottom: 16px; }
-        .feed-item:last-child { border-bottom: none; margin-bottom: 0; }
-        .feed-text { font-size: 15px; line-height: 1.5; margin-bottom: 10px; color: #111; }
-        .feed-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-        .feed-images img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
-        .feed-time { font-size: 12px; color: #999; margin-top: 8px; }
-    </style>
+       /* 3. 汽车动态（朋友圈风格） */
+       .feed-section { background: #fff; padding: 16px; }
+       .feed-item { border-bottom: 1px solid #eee; padding-bottom: 16px; margin-bottom: 16px; }
+       .feed-item:last-child { border-bottom: none; margin-bottom: 0; }
+       .feed-text { font-size: 15px; line-height: 1.5; margin-bottom: 10px; color: #111; }
+       .feed-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+       .feed-images img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
+       .feed-time { font-size: 12px; color: #999; margin-top: 8px; }
+   </style>
 </head>
 <body>
 
-    <!-- 1. 顶部封面 & 个人信息 -->
-    <div class="header">
-        <!-- 替换为你自己的封面图 URL -->
-        <img class="cover" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="封面">
-        <div class="profile-info">
-            <!-- 替换为你自己的头像 URL -->
-            <img class="avatar" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="头像">
-            <div class="name">张三 | 优质二手车/新车专营</div>
-            <div class="bio">诚信经营，专营各类豪车、二手皮卡及家用车。支持全国提车！</div>
-        </div>
-    </div>
+   <!-- 1. 顶部封面 & 个人信息 -->
+   <div class="header">
+       <!-- 如果上传了 cover.jpg 到 GitHub，直接用 cover.jpg，或者用网络网址 -->
+       <img class="cover" src="cover.jpg" alt="封面图">
+       <div class="profile-info">
+           <!-- 如果上传了 avatar.jpg 到 GitHub，直接写 avatar.jpg -->
+           <img class="avatar" src="avatar.jpg" alt="头像">
+           <div class="name">张三 | 优质汽车专营</div>
+           <div class="bio">诚信经营，专营各类二手车、豪车与新车。欢迎联系咨询！</div>
+       </div>
+   </div>
 
-    <!-- 2. 联系方式与社交应用跳转 -->
-    <div class="contact-section">
-        <div class="section-title">联系我 / 关注社交账号</div>
-        <div class="btn-grid">
-            <!-- 替换你的电话号码 -->
-            <a href="tel:+8613800138000" class="btn btn-phone">📞 拨打电话：138-0013-8000</a>
-            
-            <!-- 替换你的地图链接（如高德/百度/谷歌地图分享出来的链接） -->
-            <a href="https://maps.google.com" class="btn btn-location">📍 查看我的位置 (展厅地址)</a>
-            
-            <!-- 社交链接替换区域 -->
-            <a href="https://wa.me/8613800138000" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-            <a href="https://t.me/your_telegram_id" class="btn btn-telegram" target="_blank">Telegram</a>
-            <a href="https://facebook.com/your_profile" class="btn btn-facebook" target="_blank">Facebook</a>
-            <a href="https://www.tiktok.com/@your_id" class="btn btn-tiktok" target="_blank">TikTok</a>
-            <a href="https://www.douyin.com/user/your_id" class="btn btn-douyin" target="_blank">抖音主页</a>
-            <a href="https://www.kuaishou.com/profile/your_id" class="btn btn-kuaishou" target="_blank">快手主页</a>
-        </div>
-    </div>
+   <!-- 2. 联系方式与社交应用跳转 -->
+   <div class="contact-section">
+       <div class="section-title">联系我 / 关注社交账号</div>
+       <div class="btn-grid">
+           <!-- 替换你的电话号码 -->
+           <a href="tel:+8613800138000" class="btn btn-phone">📞 拨打电话：138-0013-8000</a>
+           
+           <!-- 替换你的展厅/位置地图链接 -->
+           <a href="https://maps.google.com" class="btn btn-location" target="_blank">📍 查看我的位置 (展厅地址)</a>
+           
+           <!-- 社交链接替换区域（请更改为你的账号链接） -->
+           <a href="https://wa.me/8613800138000" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+           <a href="https://t.me/your_telegram_id" class="btn btn-telegram" target="_blank">Telegram</a>
+           <a href="https://facebook.com/your_profile" class="btn btn-facebook" target="_blank">Facebook</a>
+           <a href="https://www.tiktok.com/@your_id" class="btn btn-tiktok" target="_blank">TikTok</a>
+           <a href="https://www.douyin.com/user/your_id" class="btn btn-douyin" target="_blank">抖音主页</a>
+           <a href="https://www.kuaishou.com/profile/your_id" class="btn btn-kuaishou" target="_blank">快手主页</a>
+       </div>
+   </div>
 
-    <!-- 3. 汽车动态展示（朋友圈模式） -->
-    <div class="feed-section">
-        <div class="section-title">最新车源动态</div>
+   <!-- 3. 汽车动态展示（朋友圈模式） -->
+   <div class="feed-section">
+       <div class="section-title">最新车源动态</div>
 
-        <!-- 动态 1 -->
-        <div class="feed-item">
-            <div class="feed-text">新到 2022 款保时捷 Macan，原版原漆，仅行驶 1.5 万公里！内饰极新，随时看车。</div>
-            <div class="feed-images">
-                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="车图1">
-                <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=400&q=80" alt="车图2">
-                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=400&q=80" alt="车图3">
-            </div>
-            <div class="feed-time">发布于 2小时前</div>
-        </div>
+       <!-- 动态 1 -->
+       <div class="feed-item">
+           <div class="feed-text">刚到现车！2022 款保时捷 Macan，原版原漆，仅行驶 1.5 万公里，内饰极新！支持现场看车试驾。</div>
+           <div class="feed-images">
+               <!-- 这里填写你上传到 GitHub 的汽车图片文件名，例如 car1.jpg, car2.jpg -->
+               <img src="car1.jpg" alt="车图1">
+               <img src="car2.jpg" alt="车图2">
+               <img src="car3.jpg" alt="车图3">
+           </div>
+           <div class="feed-time">发布于 2小时前</div>
+       </div>
 
-        <!-- 动态 2 -->
-        <div class="feed-item">
-            <div class="feed-text">刚出厂的一批硬派越野，性价比拉满，想了解配置和落地价的直接加 WhatsApp 或电话联系！</div>
-            <div class="feed-images">
-                <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=400&q=80" alt="车图1">
-                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=400&q=80" alt="车图2">
-            </div>
-            <div class="feed-time">发布于 昨天</div>
-        </div>
+       <!-- 动态 2 -->
+       <div class="feed-item">
+           <div class="feed-text">新到一批硬派越野，性价比拉满！有需要的兄弟直接点击上方按钮电话联系或加 WhatsApp！</div>
+           <div class="feed-images">
+               <img src="car4.jpg" alt="车图4">
+               <img src="car5.jpg" alt="车图5">
+           </div>
+           <div class="feed-time">发布于 昨天</div>
+       </div>
 
-    </div>
+   </div>
 
 </body>
 </html>
+
+________________
+保存与上传建议：
+1. 保存文件：在电脑新建一个文本文档，把上面的代码粘贴进去，另存为文件名 index.html（注意后缀必须是 .html，不能是 .txt）。
+2. 准备图片：把你电脑里的头像、封面、汽车图片放在同一个文件夹里，分别重命名为 avatar.jpg、cover.jpg、car1.jpg、car2.jpg 等（要和代码里的文件名保持一致）。
+3. 上传到 GitHub：直接把 index.html 和这些图片一起上传到 GitHub 仓库根目录即可！
